@@ -60,13 +60,14 @@ Below is a clear, simple walkthrough of everything you must do.
 
 ### Step 1 — Install VirtualBox
 
-Download VirtualBox for your operating system. Create a new virtual machine and attach the Debian ISO.
+Download VirtualBox for your operating system. Create a new virtual machine and attach the Debian ISO. [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 Nothing complicated here. :)
 
 ### Step 2 — Install Debian (No Graphical Interface)
 
-Inside VirtualBox, boot the ISO and install Debian with:
+Inside VirtualBox, boot the ISO and install Debian with: [Download Debian](https://www.debian.org/distrib/)
+
 
 - No desktop environment
 
@@ -343,5 +344,85 @@ Add this:
 */10 * * * * /usr/local/bin/monitoring.sh
 ```
 Now your monitoring script runs automatically. :)
+
+## You can find some useful definations in this part
+### What is Virtual machine?
+A Virtual Machine (VM) is a computer that runs inside another computer.
+
+Think of it like this:
+You open a window on your computer, and inside that window, another operating system (like Debian) is running — completely separate from your main system.
+
+A VM has:
+
+- Virtual CPU
+
+- Virtual RAM
+
+- Virtual hard disk
+
+- Virtual network
+
+- Its own operating system
+
+You can install, delete, restart, or clone a VM without affecting your real machine.
+### What is the diffirence between apt and aptitude?
+Both apt and aptitude are package managers in Debian.
+They help you install, remove, and update software.
+
+#### APT
+
+- Modern package manager
+- Default and most recommended tool
+- Simple and fast
+- Always available on Debian
+
+#### Aptitude
+
+- Older package manager
+- More advanced dependency resolver
+- Has a text-based UI
+- Not installed by default
+### What is AppArmor?
+AppArmor is a Linux security system that protects your computer by controlling what applications are allowed to do.
+It uses profiles, which are like “permission rules” for each program.
+AppArmor can limit:
+- What files a program can read
+- What folders it can write to
+- Whether it can use the network
+- What system resources it can access
+- If a program gets attacked or behaves strangely, AppArmor prevents it from damaging the system.
+Debian uses AppArmor by default because it is simple, lightweight, and effective.
+### What is LVM?
+LVM (Logical Volume Manager) is a powerful and flexible way of managing disk storage in Linux.
+Instead of using fixed partitions, LVM gives you dynamic volumes that you can resize easily.
+LVM has 3 layers:
+
+1. Physical Volume (PV)
+These are actual disks or disk partitions, like /dev/sda2.
+
+2. Volume Group (VG)
+A pool of storage made from one or more physical volumes.
+
+3. Logical Volume (LV)
+These are like partitions created from the pool of storage.
+You can resize them anytime.
+
+**Advantages of LVM:**
+
+- You can resize partitions without restarting.
+
+- You can combine multiple disks into one big storage space.
+
+- You can create snapshots.
+
+- It is more flexible than normal partitioning.
+### What is UFW?
+UFW (Uncomplicated Firewall) is a simple firewall tool for Linux systems.
+A firewall controls which connections are allowed to enter or leave your system.
+
+**What does UFW do?**
+- Protects your server
+- Blocks unwanted access
+- Allows only the ports you choose
 
 
